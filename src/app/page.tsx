@@ -1,5 +1,6 @@
 "use client";
 
+import { actions } from "@/store";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Home() {
@@ -7,15 +8,15 @@ export default function Home() {
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
-    dispatch({ type: "INC" });
+    dispatch(actions.increment(1));
   };
 
   const handleDecrement = () => {
-    dispatch({ type: "DEC" });
+    dispatch(actions.decrement(1));
   };
 
   const addBy10 = () => {
-    dispatch({ type: "ADD10", payload: 10 });
+    dispatch(actions.add10(10));
   };
 
   return (
